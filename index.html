@@ -1,285 +1,58 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Susan Dinna – Kreativ Storyteller</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Susan Dinna – kreativ storyteller og freelance tekstforfatter med blik for de ægte historier.">
+<meta charset="UTF-8">
+<title>Susan Dinna – Kreativ storyteller</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root {
-      --bg-top: #fff2f7;
-      --bg-bottom: #ffffff;
-      --text-main: #4a2b35;
-      --accent: #c45a78;
-      --accent-soft: #f9d6e2;
-      --card-bg: #ffffff;
-      --shadow-soft: 0 18px 35px rgba(0,0,0,0.08);
-      --radius-lg: 18px;
-    }
+<style>
+:root {
+  --bg-top: #fff1f6;
+  --bg-bottom: #ffffff;
+  --text-main: #3f2830;
+  --accent: #c45a78;
+  --accent-soft: #f7d3e0;
+  --card-bg: #ffffff;
+  --radius: 18px;
+  --shadow: 0 18px 28px rgba(0,0,0,0.08);
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+body {
+  font-family: system-ui,-apple-system,"Segoe UI",sans-serif;
+  background: linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+  color: var(--text-main);
+  line-height: 1.85;
+  padding: 16px;
+}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 16px;
-    }
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+}
 
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-    }
+.hero {
+  text-align: center;
+  padding: 48px 16px 56px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 32px 16px 40px;
-    }
+.hero-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 28px;
+  box-shadow: var(--shadow);
+}
 
-    .hero-image {
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: var(--shadow-soft);
-      margin: 0 auto 24px;
-      display: block;
-    }
-
-    .hero-name {
-      font-size: 1.4rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero-tagline {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #8b6977;
-      margin-bottom: 28px;
-    }
-
-    .hero-quote {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--accent);
-      max-width: 520px;
-      margin: 0 auto 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      border: none;
-      padding: 10px 22px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 20px rgba(196, 90, 120, 0.35);
-    }
-
-    .btn-secondary {
-      background: var(--accent-soft);
-      color: var(--text-main);
-    }
-
-    .btn span {
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-    }
-
-    .section {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      padding: 24px 20px;
-      margin: 0 auto 20px;
-    }
-
-    .section h2 {
-      font-size: 1.1rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #8b6977;
-      margin-bottom: 12px;
-    }
-
-    .section h3 {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
-    }
-
-    .section p {
-      font-size: 0.98rem;
-      margin-bottom: 8px;
-    }
-
-    .section ul {
-      list-style: none;
-      margin-top: 4px;
-    }
-
-    .section ul li {
-      margin: 3px 0;
-    }
-
-    .section ul li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 6px;
-    }
-
-    .contact {
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #9b7f8a;
-      margin: 18px 0 10px;
-    }
-
-    @media (min-width: 720px) {
-      .hero {
-        padding-top: 48px;
-        padding-bottom: 56px;
-      }
-      .hero-quote {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-<div class="page">
-
-  <!-- HERO / FORSIDE -->
-  <header class="hero">
-
-    <!-- ✅ KORREKT BILLEDE -->
-    <img src="IMG_7284.jpeg" alt="Susan Dinna" class="hero-image">
-
-    <div class="hero-name">Susan Dinna</div>
-    <div class="hero-tagline">Kreativ storyteller & freelance tekstforfatter</div>
-
-    <p class="hero-quote">
-      “Jeg tror på, at de historier vi tør dele – er de historier, der forbinder os.”
-    </p>
-
-    <div class="hero-actions">
-      <a href="#om-mig" class="btn btn-primary">
-        <span>→</span> Om mig
-      </a>
-      <a href="#jeg-tilbyder" class="btn btn-secondary">
-        <span>✎</span> Jeg tilbyder
-      </a>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- OM MIG -->
-    <section id="om-mig" class="section">
-      <h2>Om mig</h2>
-      <h3>Historier fra det virkelige liv</h3>
-      <p>
-        Jeg er drevet af mennesker og af de historier, vi bærer med os. Min faglige baggrund er administrativ –
-        men min egentlige uddannelse kommer fra livet selv:
-      </p>
-      <p>
-        At være mor til en datter med autisme.<br>
-        At navigere i synshandicap gennem 20 år.<br>
-        At stå i relationer præget af misbrug og sygdom – og finde vej videre.
-      </p>
-      <p>
-        Alt det har givet mig et skarpt blik for nuancer, sårbarhed og styrke.
-        Jeg skriver med varme, nysgerrighed
-        og respekt – og hjælper dig med at sætte ord på det, der er vigtigt.
-      </p>
-    </section>
-
-    <!-- JEG TILBYDER -->
-    <section id="jeg-tilbyder" class="section">
-      <h2>Jeg tilbyder</h2>
-      <h3>Storytelling til mennesker og virksomheder</h3>
-      <ul>
-        <li>Tekster til hjemmesider og nyhedsbreve</li>
-        <li>Storytelling til sociale medier</li>
-        <li>Portrætter og “om os”-historier</li>
-        <li>Personlige fortællinger</li>
-      </ul>
-    </section>
-
-    <!-- KONTAKT -->
-    <section class="section contact">
-      <h2>Kontakt</h2>
-      <p>
-        Skriv på
-        <a href="mailto:susandinna@hotmail.com">susandinna@hotmail.com</a>
-      </p>
-      <p>
-        Ring/SMS: <a href="tel:+4528188430">28 18 84 30</a>
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    © <span id="year"></span> Susan Dinna – Storytelling & tekst
-  </footer>
-
-</div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+.hero-name {
+  font-size: 1.4rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
