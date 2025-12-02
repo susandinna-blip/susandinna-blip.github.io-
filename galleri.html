@@ -2,87 +2,74 @@
 <html lang="da">
 <head>
 <meta charset="UTF-8">
-<title>Galleri - Susan Dinna</title>
+<title>Galleri</title>
 
 <style>
-    body{
-        margin:0;
-        font-family: system-ui, sans-serif;
-        background:#f8eef2;
-        text-align:center;
-    }
 
-    h1{
-        color:#7a3a4d;
-        margin:20px 0;
-    }
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fdecef;
+    text-align:center;
+}
 
-    /* Slider */
-    .slider{
-        position:relative;
-        max-width:650px;
-        margin:30px auto;
-        border-radius:25px;
-        overflow:hidden;
-        box-shadow:0 12px 30px rgba(122,58,77,0.25);
-        background:#000;
-    }
+h1{
+    margin:30px 0 15px;
+    color:#7a2f47;
+}
 
-    .slide{
-        display:none;
-        width:100%;
-    }
+/* -------- Slider -------- */
 
-    .slide img{
-        width:100%;
-        height:auto;
-        display:block;
-    }
+.slider{
+    max-width:420px;
+    margin:0 auto;
+    position:relative;
+}
 
-    /* Aktiv slide */
-    .active{
-        display:block;
-    }
+.slide{
+    display:block;
+}
 
-    /* Tekst overlay */
-    .quote{
-        position:absolute;
-        bottom:18px;
-        left:50%;
-        transform:translateX(-50%);
-        background:rgba(255,210,224,0.9);
-        padding:15px 22px;
-        border-radius:18px;
-        color:#7a3a4d;
-        font-weight:600;
-        font-size:16px;
-        max-width:90%;
-        box-shadow:0 4px 14px rgba(0,0,0,0.15);
-    }
+.slide img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(122,47,71,0.35);
+}
 
-    /* Navigation */
-    .nav{
-        margin-top:15px;
-    }
+/* -------- Citat -------- */
 
-    button{
-        background:#b45778;
-        border:none;
-        color:white;
-        padding:10px 18px;
-        border-radius:50%;
-        font-size:20px;
-        margin:0 6px;
-        cursor:pointer;
-        box-shadow:0 3px 8px rgba(0,0,0,0.2);
-    }
+.quote{
+    position:absolute;
+    bottom:15px;
+    left:10%;
+    right:10%;
+    
+    background:rgba(255,190,210,0.9);
+    padding:10px 14px;
+    border-radius:14px;
+    
+    color:#7a2f47;
+    font-size:14px;
+    font-style:italic;
+}
 
-    button:hover{
-        background:#963d62;
-    }
+/* -------- Navigation -------- */
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    color:white;
+    background:#b44d6a;
+    padding:12px 22px;
+    border-radius:25px;
+}
+
+.back:hover{
+    background:#943a54;
+}
 
 </style>
-
 </head>
 <body>
 
@@ -90,47 +77,21 @@
 
 <div class="slider">
 
-    <!-- Slide 1 -->
-    <div class="slide active">
-        <img src="IMG_7284.jpeg" alt="Susan portræt">
-    </div>
-
-    <!-- Slide 2 – Det nye maleri -->
+    <!-- MALERI -->
     <div class="slide">
-        <img src="C46FBF4D-982D-41AD-B402-20177B18D6CC.jpeg" alt="Maleri – kommunikation">
+        <img src="01E55467-6AEB-4DA3-B5FD-A7D18378E66C.png" alt="Maleri">
     </div>
 
-    <!-- Citat -->
+    <!-- CITAT -->
     <div class="quote">
         Kommunikation starter indefra – historien skaber vi sammen
     </div>
 
 </div>
 
-<div class="nav">
-    <button onclick="prev()">‹</button>
-    <button onclick="next()">›</button>
-</div>
-
-<script>
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-function show(index){
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
-}
-
-function next(){
-    current = (current + 1) % slides.length;
-    show(current);
-}
-
-function prev(){
-    current = (current - 1 + slides.length) % slides.length;
-    show(current);
-}
-</script>
+<a href="index.html" class="back">
+    ← Tilbage til forsiden
+</a>
 
 </body>
 </html>
