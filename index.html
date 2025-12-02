@@ -1,210 +1,246 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-<meta charset="UTF-8">
-<title>Susan Dinna – Kreativ storyteller</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Susan Dinna – Kreativ storyteller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Susan Dinna – kreativ storyteller og freelance tekstforfatter." />
 
-<style>
-:root{
-  --bg:#ffe8f1;
-  --bg-soft:#fff4f8;
-  --card:#ffffff;
-  --accent:#c44b7e;
-  --accent-soft:#f7bfd4;
-  --text:#4b2f38;
-  --muted:#9b6b79;
+  <style>
+    /* Grundlayout */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fff1f6 0%, #ffe4ee 100%);
+      color: #402428;
+      padding: 24px;
+    }
 
-  --shadow-soft:0 18px 36px rgba(180,70,110,.25);
-  --shadow-card:0 14px 30px rgba(180,70,110,.2);
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-  --radius-lg:24px;
-  --radius-pill:999px;
-}
+    /* Portræt */
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 25px rgba(194, 84, 122, 0.35);
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
 
-body{
-  margin:0;
-  padding:24px;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,sans-serif;
-  background: radial-gradient(circle at top,#ffe0eb 0%, #fff0f6 40%, #ffffff 100%);
-  color:var(--text);
-  line-height:1.7;
-}
+    /* Hero-tekst */
+    h1 {
+      margin: 8px 0 6px;
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
 
-.page{
-  max-width:700px;
-  margin:0 auto;
-  text-align:center;
-}
+    .subtitle {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      opacity: 0.75;
+      margin-bottom: 18px;
+    }
 
-.hero{margin-bottom:40px;}
+    .quote {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #b04b69;
+      margin: 18px auto 26px;
+      max-width: 520px;
+    }
 
-.portrait{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:white;
-  margin:0 auto 16px;
-  padding:8px;
-  box-shadow:var(--shadow-soft);
-}
+    /* Knapper */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
 
-.portrait img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-}
+    .btn {
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 15px rgba(194, 84, 122, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
-h1{
-  margin:12px 0 4px;
-  letter-spacing:2px;
-}
+    .btn-primary {
+      background: #c2547a;
+      color: #fff;
+    }
 
-.subtitle{
-  color:var(--muted);
-  letter-spacing:2px;
-  font-size:12px;
-}
+    .btn-secondary {
+      background: #ffd6e1;
+      color: #7a3650;
+      box-shadow: 0 6px 15px rgba(194, 84, 122, 0.2);
+    }
 
-.quote{
-  margin-top:16px;
-  font-style:italic;
-  color:var(--accent);
-  font-size:18px;
-  max-width:520px;
-  margin-inline:auto;
-}
+    .btn-ghost {
+      background: transparent;
+      color: #7a3650;
+      border: 1px solid rgba(176, 75, 105, 0.35);
+      box-shadow: 0 4px 10px rgba(194, 84, 122, 0.15);
+    }
 
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  margin-top:22px;
-  margin-bottom:32px;
-  flex-wrap:wrap;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(194, 84, 122, 0.35);
+    }
 
-.btn{
-  background:var(--accent);
-  color:white;
-  padding:12px 22px;
-  border-radius:var(--radius-pill);
-  text-decoration:none;
-  box-shadow:var(--shadow-soft);
-  transition:.15s ease;
-}
+    /* Cards / sektioner */
+    .card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 20px;
+      margin: 18px 0;
+      box-shadow: 0 10px 24px rgba(194, 84, 122, 0.15);
+      text-align: left;
+    }
 
-.btn.secondary{
-  background:var(--accent-soft);
-  color:var(--text);
-}
+    h2 {
+      color: #b04b69;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
 
-.btn:hover{ transform:translateY(-2px); }
+    .card p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
 
-section{
-  background:var(--card);
-  border-radius:var(--radius-lg);
-  padding:28px;
-  margin-bottom:24px;
-  box-shadow:var(--shadow-card);
-  text-align:left;
-}
+    ul {
+      padding-left: 18px;
+      margin: 8px 0;
+    }
 
-section h2{
-  text-align:center;
-  letter-spacing:3px;
-  font-size:14px;
-  margin-bottom:14px;
-  color:var(--muted);
-}
+    li {
+      margin: 6px 0;
+    }
 
-ul{ padding-left:20px; }
+    .contact-line {
+      margin: 8px 0;
+    }
 
-li{ margin-bottom:10px; }
+    .contact-line a {
+      color: #b04b69;
+      text-decoration: none;
+    }
 
-.contact p{
-  text-align:center;
-  margin:8px 0;
-  font-size:16px;
-}
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
 
-.contact a{
-  color:var(--accent);
-  font-weight:600;
-  text-decoration:none;
-}
-.contact a:hover{ text-decoration:underline; }
-</style>
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.6;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 18px;
+      }
+      .card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="page">
+  <div class="page">
 
-  <div class="hero">
-    <div class="portrait">
-      <img src="IMG_7282.jpg" alt="Portræt af Susan Dinna">
-    </div>
+    <!-- BILLEDE -->
+    <img src="IMG_7284.jpeg" alt="Portræt af Susan Dinna" class="profile-img" />
 
+    <!-- NAVN + UNDERTEKST -->
     <h1>SUSAN DINNA</h1>
     <div class="subtitle">
-      KREATIV STORYTELLER & FREELANCE TEKSTFORFATTER
+      KREATIV STORYTELLER &amp; FREELANCE TEKSTFORFATTER
     </div>
 
+    <!-- CITAT -->
     <div class="quote">
       “Jeg tror på, at de historier vi tør dele – er de historier, der forbinder os.”
     </div>
 
+    <!-- KNAPPER -->
     <div class="buttons">
-      <a class="btn" href="#om">→ Om mig</a>
-      <a class="btn secondary" href="#tilbyder">✎ Jeg tilbyder</a>
+      <a href="#om-mig" class="btn btn-primary">→ Om mig</a>
+      <a href="#tilbyder" class="btn btn-secondary">✎ Jeg tilbyder</a>
+      <a href="galleri.html" class="btn btn-ghost">▸ Galleri</a>
     </div>
+
+    <!-- OM MIG -->
+    <section id="om-mig" class="card">
+      <h2>Om mig</h2>
+      <p>
+        Min vej ind i storytelling er formet af mange møder med mennesker og livssituationer, hvor det har været
+        nødvendigt at lytte bag ordene og forstå det, der ikke altid bliver sagt højt.
+      </p>
+      <p>
+        Jeg har lært at navigere i komplekse menneskelige fortællinger med ro, overblik og empati – og at formidle dem
+        klart, respektfuldt og med blik for det væsentlige.
+      </p>
+      <p>
+        Alt det har skærpet mit øje for nuancer og min evne til at omsætte livserfaring til tekster, der rammer ærligt
+        og præcist.
+      </p>
+    </section>
+
+    <!-- JEG TILBYDER -->
+    <section id="tilbyder" class="card">
+      <h2>Jeg tilbyder</h2>
+      <p>Storytelling til mennesker og virksomheder – blandt andet:</p>
+      <ul>
+        <li>Hjemmesidetekster og nyhedsbreve</li>
+        <li>Storytelling til sociale medier</li>
+        <li>Portrætter og præsentationstekster</li>
+        <li>Personlige og nænsomme fortællinger</li>
+      </ul>
+      <p>
+        Sammen finder vi den tone, der føles ægte – og den fortælling, der skaber forbindelse.
+      </p>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="card">
+      <h2>Kontakt</h2>
+      <p class="contact-line">
+        ✉️
+        <a href="mailto:susandinna@hotmail.com">susandinna@hotmail.com</a>
+      </p>
+      <p class="contact-line">
+        ☎️
+        <a href="tel:+4528188430">28 18 84 30</a>
+      </p>
+    </section>
+
+    <footer>
+      © Susan Dinna – Storytelling &amp; tekst
+    </footer>
   </div>
-
-  <section id="om">
-    <h2>OM MIG</h2>
-
-    <p>
-      Min vej ind i storytelling er formet af mange møder med mennesker og livssituationer,
-      hvor det har været nødvendigt at lytte bag ordene og forstå det,
-      der ikke altid bliver sagt højt.
-    </p>
-
-    <p>
-      Jeg har lært at navigere i komplekse fortællinger med ro, overblik og empati –
-      og at formidle dem klart, respektfuldt og med blik for det væsentlige.
-    </p>
-
-    <p>
-      Alt det har skærpet mit øje for nuancer og min evne til at omsætte livserfaring
-      til tekster, der rammer ærligt og præcist.
-    </p>
-  </section>
-
-  <section id="tilbyder">
-    <h2>JEG TILBYDER</h2>
-
-    <ul>
-      <li>Hjemmesidetekster og nyhedsbreve</li>
-      <li>Storytelling til sociale medier</li>
-      <li>Portrætter og præsentationstekster</li>
-      <li>Personlige og nænsomme fortællinger</li>
-    </ul>
-
-    <p>
-      Sammen finder vi den tone, der føles ægte –
-      og den fortælling, der skaber forbindelse.
-    </p>
-  </section>
-
-  <section class="contact">
-    <h2>KONTAKT</h2>
-
-    <p>📧 <a href="mailto:susandinna@hotmail.com">susandinna@hotmail.com</a></p>
-
-    <p>📞 <a href="tel:+4528188430">28 18 84 30</a></p>
-  </section>
-
-</div>
 </body>
 </html>
