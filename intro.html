@@ -2,90 +2,224 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Intro-kampagne</title>
+  <title>Intro-kampagne – Susan Dinna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #faf7f4;
-      color:#3a2f2a;
+    :root{
+      --bg-top:#fff4f8;
+      --bg-bottom:#faf7f4;
+      --accent:#c45a78;
+      --accent-soft:#f7d3e0;
+      --text:#3a2a30;
+      --shadow:0 18px 28px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
       margin:0;
-      padding:40px 16px;
+      padding:0;
+    }
+
+    body{
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      min-height:100vh;
+      background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+      color:var(--text);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:32px 16px 48px;
     }
 
     .box{
-      max-width:720px;
-      margin:0 auto;
-      background:white;
-      padding:32px;
-      border-radius:12px;
-      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      max-width:760px;
+      width:100%;
+      background:#fff;
+      padding:36px 26px 30px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 16px;
+      border-radius:999px;
+      font-size:.78rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      background:var(--accent-soft);
+      color:var(--accent);
+      margin-bottom:10px;
     }
 
     h1{
+      font-size:2rem;
       text-align:center;
-      margin-top:0;
+      margin-bottom:6px;
+    }
+
+    h1 span{
+      display:block;
+      font-size:.85rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#a17682;
+      margin-top:6px;
+    }
+
+    .lead{
+      text-align:center;
+      margin:18px 0 26px;
+      font-size:1.02rem;
+      line-height:1.7;
+    }
+
+    .highlight-line{
+      display:inline-block;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    .columns{
+      display:flex;
+      flex-direction:column;
+      gap:26px;
+      margin-bottom:26px;
+    }
+
+    .col h2{
+      font-size:1rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+      color:#8f6675;
+    }
+
+    .col h3{
+      font-size:1.15rem;
+      margin-bottom:8px;
     }
 
     ul{
-      padding-left:18px;
+      list-style:none;
+      padding-left:0;
     }
 
     li{
       margin-bottom:6px;
+      line-height:1.7;
+      position:relative;
+      padding-left:20px;
     }
 
-    .btn{
-      display:inline-block;
-      margin-top:16px;
-      background:#c7a46c;
-      color:white;
-      padding:12px 20px;
-      text-decoration:none;
-      border-radius:6px;
+    li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+    }
+
+    .notice{
+      margin:8px 0 24px;
       font-weight:600;
+      line-height:1.7;
     }
 
-    .btn-back{
-      margin-top:24px;
-      display:inline-block;
-      color:#555;
+    .notice strong{
+      background:linear-gradient(90deg,rgba(196,90,120,.12),transparent);
+      padding:2px 4px;
+      border-radius:6px;
+    }
+
+    .back-link{
+      font-size:.9rem;
       text-decoration:none;
+      color:#7f5e6a;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .back-link span{
+      font-size:1.1rem;
+      transform:translateY(-1px);
+    }
+
+    .back-link:hover{
+      text-decoration:underline;
+    }
+
+    @media(min-width:720px){
+      body{
+        align-items:center;
+      }
+      .box{
+        padding:42px 40px 34px;
+      }
+      h1{
+        font-size:2.2rem;
+      }
+      .columns{
+        flex-direction:row;
+      }
+      .col{
+        flex:1;
+      }
+      .lead{
+        font-size:1.05rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <main class="box">
 
-<div class="box">
+    <div class="tag">Intro-tilbud</div>
 
-<h1>Intro-kampagne</h1>
+    <h1>
+      Intro-kampagne
+      <span>Professionelle billeder & personlig fortælling</span>
+    </h1>
 
-<p>
-Vil du have professionelle billeder – og samtidig hjælpe en fotograf i opstart?
-Så er denne intro-kampagne til dig.
-</p>
+    <p class="lead">
+      Vil du have <span class="highlight-line">professionelle billeder</span> – og samtidig hjælpe en fotograf i opstart?  
+      Så er denne intro-kampagne til dig.
+    </p>
 
-<h3>Du får</h3>
-<ul>
-  <li>Professionel fotografering tilpasset dit behov</li>
-  <li>Billeder klar til web, sociale medier og markedsføring</li>
-  <li>Personlig sparring før og efter shoot</li>
-</ul>
+    <section class="columns">
+      <div class="col">
+        <h2>Du får</h2>
+        <h3>En tryg og tilpasset fotosession</h3>
+        <ul>
+          <li>Professionel fotografering tilpasset dit behov</li>
+          <li>Billeder klar til web, sociale medier og markedsføring</li>
+          <li>Personlig sparring før og efter shoot</li>
+        </ul>
+      </div>
 
-<h3>Jeg får</h3>
-<ul>
-  <li>Tilladelse til at vise opgaven som case i mit galleri</li>
-  <li>En kort udtalelse/anbefaling hvis du har lyst</li>
-</ul>
+      <div class="col">
+        <h2>Jeg får</h2>
+        <h3>Mulighed for at vise dit projekt frem</h3>
+        <ul>
+          <li>Tilladelse til at vise opgaven som case i mit galleri</li>
+          <li>En kort udtalelse/anbefaling – hvis du har lyst</li>
+        </ul>
+      </div>
+    </section>
 
-<p>
-<strong>Kampagnen er tidsbegrænset og har kun få ledige pladser.</strong>
-</p>
+    <p class="notice">
+      <strong>Kampagnen er tidsbegrænset og har kun få ledige pladser.</strong><br>
+      Skriv gerne til mig, hvis du er nysgerrig – så finder vi ud af, om det er noget for dig.
+    </p>
 
-<a href="index.html" class="btn-back">← Tilbage til forsiden</a>
+    <a class="back-link" href="index.html">
+      <span>←</span> Tilbage til forsiden
+    </a>
 
-</div>
-
+  </main>
 </body>
 </html>
