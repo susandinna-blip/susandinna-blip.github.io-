@@ -13,17 +13,20 @@
   --accent-soft:#f7d3e0;
   --text:#3f2830;
   --shadow:0 18px 28px rgba(0,0,0,.08);
-  --radius:18px; /* RULLENDE TOP */
-  }
-.banner {
-  background: linear-gradient(135deg, #b34a74, #cf6d8f);
+  --radius:18px; /* RULLENDE .banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #c45a78;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  white-space: nowrap;
+  text-align: center;
+  padding: 8px 0;
+  z-index: 999;
   overflow: hidden;
-  padding: 10px 0;
-  box-shadow: 0 6px 16px rgba(179,74,116,0.35);
+  white-space: nowrap;
 }
 
 .banner span {
@@ -33,18 +36,22 @@
 }
 
 @keyframes bannerScroll {
-  from { transform: translateX(0%); }
-  to   { transform: translateX(-100%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
+
+
+
 
 *{box-sizing:border-box;margin:0;padding:0;}
 
 body{
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-  background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
-  color:var(--text);
-  line-height:1.85;
+  font-family: system-ui;
+  background: linear-gradient(...);
+  color: var(--text);
+  line-height: 1.85;
   padding:16px;
+
 }
 
 .page{max-width:860px;margin:auto;}
@@ -236,8 +243,10 @@ footer{
 }
 </style>
 </head>
-
 <body>
+<div class="banner">
+  <span> Denne side er udarbejdet af Susan Dinna </span>
+</div>
 <div class="page">
 
 <header class="hero">
