@@ -5,6 +5,7 @@
 <title>Susan Dinna – Kreativ storyteller</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <style>
 :root{
   --bg-top:#fff1f6;
@@ -12,13 +13,17 @@
   --accent:#c45a78;
   --accent-soft:#f7d3e0;
   --text:#3f2830;
-  --shadow:0 18px 28px rgba(0,0,0,.08);
-  --radius:18px; /* RULLENDE .banner {
+  --shadow:0 18px 28px rgba(63,40,48,0.18);
+  --radius:18px;
+}
+
+/* RULLENDE BANNER */
+.banner{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #c45a78;
+  background: #c45a78;   /* mørk rosa */
   color: white;
   font-size: 13px;
   font-weight: 500;
@@ -26,29 +31,18 @@
   padding: 8px 0;
   z-index: 999;
   overflow: hidden;
-  white-space: .banner{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background:#c45a78;   /* mørk rosa */
-  color:white;
-  font-size:14px;
-  font-weight:500;
-  padding:8px 0;
-  z-index:999;
-  overflow:hidden;
   white-space: nowrap;
+}
 
-.banner span {
+.banner span{
   display: inline-block;
   padding-left: 100%;
   animation: bannerScroll 18s linear infinite;
 }
 
-@keyframes bannerScroll {
+@keyframes bannerScroll{
   from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  to   { transform: translateX(-100%); }
 }
 
 
