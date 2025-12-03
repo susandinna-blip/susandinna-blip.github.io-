@@ -7,11 +7,11 @@
 
   <style>
     :root{
-      --bg-top:#fff4f8;
-      --bg-bottom:#faf7f4;
+      --bg-top:#fff1f6;
+      --bg-bottom:#ffffff;
       --accent:#c45a78;
       --accent-soft:#f7d3e0;
-      --text:#3a2a30;
+      --text:#3f2830;
       --shadow:0 18px 28px rgba(0,0,0,.08);
       --radius:18px;
     }
@@ -24,96 +24,121 @@
 
     body{
       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      min-height:100vh;
       background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
       color:var(--text);
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:32px 16px 48px;
+      line-height:1.8;
+      padding:20px 16px 40px;
     }
 
-    .box{
-      max-width:760px;
-      width:100%;
+    .page{
+      max-width:860px;
+      margin:0 auto;
+    }
+
+    /* lille bølge / flow som på forsiden */
+    .flow{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:-1;
+    }
+    .flow::before{
+      content:"";
+      position:absolute;
+      width:140%;
+      height:260px;
+      left:-20%;
+      top:-120px;
+      background:
+        radial-gradient(ellipse at center,
+        rgba(196,90,120,0.12) 0%,
+        rgba(196,90,120,0.06) 40%,
+        transparent 70%);
+      border-radius:50%;
+    }
+
+    /* CARD */
+    .intro-card{
       background:#fff;
-      padding:36px 26px 30px;
       border-radius:var(--radius);
       box-shadow:var(--shadow);
+      padding:32px 22px 26px;
+      margin-top:26px;
     }
 
-    .tag{
-      display:inline-block;
-      padding:6px 16px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 12px;
       border-radius:999px;
       font-size:.78rem;
-      letter-spacing:.2em;
       text-transform:uppercase;
+      letter-spacing:.18em;
       background:var(--accent-soft);
       color:var(--accent);
+      margin-bottom:14px;
+    }
+
+    .badge-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
+    .intro-heading{
       margin-bottom:10px;
     }
 
-    h1{
+    .intro-heading span.big{
+      display:block;
       font-size:2rem;
-      text-align:center;
-      margin-bottom:6px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
-    h1 span{
+    .intro-heading span.small{
       display:block;
-      font-size:.85rem;
-      letter-spacing:.18em;
+      font-size:.86rem;
       text-transform:uppercase;
-      color:#a17682;
+      letter-spacing:.28em;
+      color:#a07884;
       margin-top:6px;
     }
 
-    .lead{
-      text-align:center;
-      margin:18px 0 26px;
+    .intro-lead{
       font-size:1.02rem;
-      line-height:1.7;
-    }
-
-    .highlight-line{
-      display:inline-block;
-      font-weight:600;
-      color:var(--accent);
+      margin:14px 0 22px;
     }
 
     .columns{
       display:flex;
       flex-direction:column;
-      gap:26px;
-      margin-bottom:26px;
-    }
-
-    .col h2{
-      font-size:1rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      margin-bottom:8px;
-      color:#8f6675;
+      gap:20px;
+      margin-bottom:20px;
     }
 
     .col h3{
-      font-size:1.15rem;
-      margin-bottom:8px;
+      font-size:1.05rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:#9b6b78;
+      margin-bottom:10px;
     }
 
     ul{
       list-style:none;
       padding-left:0;
+      font-size:.98rem;
     }
-
     li{
-      margin-bottom:6px;
-      line-height:1.7;
+      margin-bottom:8px;
       position:relative;
-      padding-left:20px;
+      padding-left:18px;
     }
-
     li::before{
       content:"•";
       position:absolute;
@@ -122,45 +147,76 @@
       color:var(--accent);
     }
 
-    .notice{
-      margin:8px 0 24px;
-      font-weight:600;
-      line-height:1.7;
+    .highlight{
+      margin-top:6px;
+      font-weight:700;
     }
 
-    .notice strong{
-      background:linear-gradient(90deg,rgba(196,90,120,.12),transparent);
-      padding:2px 4px;
-      border-radius:6px;
+    .highlight span{
+      display:block;
     }
 
-    .back-link{
+    .highlight span.main{
+      font-size:1.02rem;
+    }
+
+    .highlight span.sub{
       font-size:.9rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:#a07884;
+      margin-top:2px;
+    }
+
+    /* FOOTER-LINK */
+    .back-link{
+      margin-top:18px;
+      font-size:.9rem;
+    }
+
+    .back-link a{
+      color:var(--accent);
       text-decoration:none;
-      color:#7f5e6a;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
     }
 
-    .back-link span{
-      font-size:1.1rem;
-      transform:translateY(-1px);
-    }
-
-    .back-link:hover{
+    .back-link a:hover{
       text-decoration:underline;
     }
 
-    @media(min-width:720px){
-      body{
-        align-items:center;
+    /* knap til kontakt */
+    .actions{
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      padding:10px 22px;
+      font-size:.93rem;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 10px 18px rgba(196,90,120,.35);
+    }
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    @media (min-width:720px){
+      .intro-card{
+        padding:36px 36px 30px;
       }
-      .box{
-        padding:42px 40px 34px;
+      .intro-heading span.big{
+        font-size:2.3rem;
       }
-      h1{
-        font-size:2.2rem;
+      .intro-lead{
+        font-size:1.07rem;
       }
       .columns{
         flex-direction:row;
@@ -168,58 +224,65 @@
       .col{
         flex:1;
       }
-      .lead{
-        font-size:1.05rem;
-      }
     }
   </style>
 </head>
 
 <body>
-  <main class="box">
+<div class="flow"></div>
 
-    <div class="tag">Intro-tilbud</div>
+<div class="page">
+  <main class="intro-card">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Intro-tilbud
+    </div>
 
-    <h1>
-      Intro-kampagne
-      <span>Professionelle billeder & personlig fortælling</span>
-    </h1>
+    <header class="intro-heading">
+      <span class="small">For dig der har brug for billeder</span>
+      <span class="big">INTRO-KAMPAGNE</span>
+    </header>
 
-    <p class="lead">
-      Vil du have <span class="highlight-line">professionelle billeder</span> – og samtidig hjælpe en fotograf i opstart?  
+    <p class="intro-lead">
+      Vil du have professionelle billeder – og samtidig hjælpe en fotograf i opstart?
       Så er denne intro-kampagne til dig.
     </p>
 
-    <section class="columns">
-      <div class="col">
-        <h2>Du får</h2>
-        <h3>En tryg og tilpasset fotosession</h3>
+    <div class="columns">
+      <section class="col">
+        <h3>Du får</h3>
         <ul>
           <li>Professionel fotografering tilpasset dit behov</li>
           <li>Billeder klar til web, sociale medier og markedsføring</li>
           <li>Personlig sparring før og efter shoot</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="col">
-        <h2>Jeg får</h2>
-        <h3>Mulighed for at vise dit projekt frem</h3>
+      <section class="col">
+        <h3>Jeg får</h3>
         <ul>
           <li>Tilladelse til at vise opgaven som case i mit galleri</li>
           <li>En kort udtalelse/anbefaling – hvis du har lyst</li>
         </ul>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <p class="notice">
-      <strong>Kampagnen er tidsbegrænset og har kun få ledige pladser.</strong><br>
-      Skriv gerne til mig, hvis du er nysgerrig – så finder vi ud af, om det er noget for dig.
+    <p class="highlight">
+      <span class="main">Kampagnen er tidsbegrænset og har kun få ledige pladser.</span>
+      <span class="sub">Først til mølle</span>
     </p>
 
-    <a class="back-link" href="index.html">
-      <span>←</span> Tilbage til forsiden
-    </a>
+    <div class="actions">
+      <a href="index.html" class="btn btn-primary">
+        ← Tilbage til forsiden
+      </a>
+    </div>
 
+    <p class="back-link">
+      Eller skriv direkte til mig via kontaktformularen på forsiden.
+    </p>
   </main>
+</div>
+
 </body>
 </html>
